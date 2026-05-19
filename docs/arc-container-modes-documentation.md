@@ -187,6 +187,17 @@ Expected for current k8s-novol:
 - docker:dind container start
 - no pvc creation for this set
 
+## 7.6 Workflow tests to run
+
+The following workflow files in InfraCreator are mode-specific and can be run with workflow_dispatch:
+
+- .github/workflows/test-runner-dev-dind.yml
+  - validates dind docker daemon path and workload image pull/run
+- .github/workflows/test-runner-dev-kubernetes-pvc.yml
+  - uses job container image to validate kubernetes child pod flow plus pvc workspace behavior
+- .github/workflows/test-runner-dev-k8s-novol.yml
+  - validates current k8s-novol behavior as dind without pvc
+
 ---
 
 ## 8. Common confusion to avoid
